@@ -1,0 +1,26 @@
+{
+  "name": "heritago",
+  "version": "1.0.0",
+  "description": "A Heritage Adventure App",
+  "main": "script/index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://Heritium@github.com/heritago"
+  },
+  "keywords": [
+    "heritage",
+    "advanture",
+    "gamification"
+  ],
+  "author": "Heritium, Co.",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "angularjs": "0.0.1"
+  }
+}

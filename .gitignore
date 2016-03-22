@@ -1,0 +1,6 @@
+node_modules/
+bower_components/
+cordova/platform/android/
+cordova/plugins/
+!cordova/plugins/*.json
+
