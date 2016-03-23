@@ -26,10 +26,10 @@ var webpackConfig = {
 };
 
 // Server
-gulp.task('serve', serve('publish'));
-gulp.task('serve-build', serve(['publish', 'build']));
+gulp.task('serve', serve(destdir));
+gulp.task('serve-build', serve([destdir, 'build']));
 gulp.task('serve-prod', serve({
-    root: ['publish', 'build'],
+    root: [destdir, 'build'],
     port: 80,
     middleware: function(req, res) {
         // custom optional middleware
