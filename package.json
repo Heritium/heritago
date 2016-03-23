@@ -18,9 +18,8 @@
   "author": "Heritium, Co.",
   "license": "GPL-3.0",
   "devDependencies": {
-    "gulp": "^3.9.1"
-  },
-  "dependencies": {
-    "angularjs": "0.0.1"
+    "gulp": "^3.9.1",
+    "gulp-serve": "^1.2.0",
+    "gulp-webpack": "^1.5.0"
   }
 }
