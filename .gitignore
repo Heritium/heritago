@@ -3,4 +3,5 @@ bower_components/
 cordova/platform/android/
 cordova/plugins/
 !cordova/plugins/*.json
-
+cordova/www/
+app/library/
