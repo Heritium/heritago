@@ -2,15 +2,17 @@ var gulp = require('gulp');
 var path = require('path');
 var serve = require('gulp-serve');
 var webpack = require('gulp-webpack');
+var sass = require('gulp-sass');
 
 var appdir = 'app/';
 var scriptdir = appdir + 'script/';
+var styledir = appdir + 'style/';
 var componentdir = appdir + 'component/';
 var destdir = 'cordova/www/';
-var scriptdestdir = destdir + 'js/';
-var styledestdir = destdir + 'css/';
+var scriptdestdir = destdir + 'script/';
+var styledestdir = destdir + 'style/';
 
-var webpackConfig = {
+var webpackScriptConfig = {
     context: __dirname + "/",
     entry: "./" + scriptdir + "app.js",
     resolve: {
@@ -22,6 +24,20 @@ var webpackConfig = {
     output: {
         path: __dirname + scriptdestdir,
         filename: "heritago.js"
+    }
+};
+
+var webpackSassConfig = {
+    context: __dirname + "/",
+    entry: "./" + styledir + "app.scss",
+    resolve: {
+        root: [
+            path.resolve(styledir),
+        ]
+    },
+    output: {
+        path: __dirname + styledestdir,
+        filename: "style.webpacked.css"
     }
 };
 
@@ -53,8 +69,15 @@ gulp.task('publish:html', function(){
         .pipe(gulp.dest(destdir));
 });
 
+gulp.task('publish:style', function() {
+    return gulp.src(styledir + 'app.scss')
+        .pipe(sass())
+        .pipe(webpack(webpackSassConfig))
+        .pipe(gulp.dest(styledestdir));
+});
+
 gulp.task('publish:script', function() {
     return gulp.src(scriptdir + 'app.js')
-        .pipe(webpack(webpackConfig))
+        .pipe(webpack(webpackScriptConfig))
         .pipe(gulp.dest(scriptdestdir));
 });
