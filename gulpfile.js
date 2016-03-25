@@ -61,7 +61,7 @@ gulp.task('watch', function() {
 });
 
 // Publisher
-gulp.task('publish', ['publish:html', 'publish:script']);
+gulp.task('publish', ['publish:html', 'publish:library', 'publish:script']);
 
 gulp.task('publish:html', function(){
     return gulp.src(appdir + 'index.html')
@@ -79,4 +79,9 @@ gulp.task('publish:script', function() {
     return gulp.src(scriptdir + 'app.js')
         .pipe(webpack(webpackScriptConfig))
         .pipe(gulp.dest(scriptdestdir));
+});
+
+gulp.task('publish:library', function() {
+    return gulp.src(appdir + 'library/**/*')
+        .pipe(gulp.dest(destdir + 'library'));
 });
