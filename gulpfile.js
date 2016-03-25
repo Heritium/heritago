@@ -14,7 +14,7 @@ var styledestdir = destdir + 'style/';
 
 var webpackScriptConfig = {
     context: __dirname + "/",
-    entry: "./" + scriptdir + "app.js",
+    entry: "./" + scriptdir + "heritago.js",
     resolve: {
         root: [
             path.resolve(componentdir),
@@ -29,7 +29,7 @@ var webpackScriptConfig = {
 
 var webpackSassConfig = {
     context: __dirname + "/",
-    entry: "./" + styledir + "app.scss",
+    entry: "./" + styledir + "heritago.scss",
     resolve: {
         root: [
             path.resolve(styledir),
@@ -69,14 +69,14 @@ gulp.task('publish:html', function(){
 });
 
 gulp.task('publish:style', function() {
-    return gulp.src(styledir + 'app.scss')
+    return gulp.src(styledir + 'heritago.scss')
         .pipe(sass())
         .pipe(webpack(webpackSassConfig))
         .pipe(gulp.dest(styledestdir));
 });
 
 gulp.task('publish:script', function() {
-    return gulp.src(scriptdir + 'app.js')
+    return gulp.src(scriptdir + 'heritago.js')
         .pipe(webpack(webpackScriptConfig))
         .pipe(gulp.dest(scriptdestdir));
 });
