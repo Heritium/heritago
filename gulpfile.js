@@ -56,8 +56,7 @@ gulp.task('serve-prod', serve({
 gulp.task('default', ['watch', 'serve']);
 gulp.task('watch', function() {
     gulp.watch([
-        scriptdir + '**/*.js',
-        componentdir + '**/*.js',
+        appdir + '**/*'
     ], ['publish']);
 });
 
