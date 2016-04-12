@@ -16,6 +16,7 @@
   "moduleType": [],
   "private": true,
   "dependencies": {
-    "angular": "angularjs#^1.5.2"
+    "angular": "angularjs#^1.5.2",
+    "Materialize": "materialize#^0.97.6"
   }
 }
